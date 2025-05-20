@@ -2,7 +2,7 @@
 # At least one uppercase, lowercase, digit, and special symbol
 # No obvious patterns ...qwert 1234...
 
-input_password = input("Enter a password: ")
+#
 
 def check_password(password):
     if len(password) < 12:
@@ -74,5 +74,9 @@ def patterns_checker(password):
                 return False
 
     return True
+## only runs if the file is ran directly (prevents issues during testing)
+if __name__ == "__main__":
+    input_password = input("Enter a password: ")
+    check_password(input_password)
 
 

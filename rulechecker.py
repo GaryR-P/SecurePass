@@ -9,42 +9,45 @@ def check_password(password):
         print("Password must be 12 characters in length or more")
         return False
 
-    for char in password:
-        if char.isupper():
+    for i in range(0,len(password)):
+        if password[i].isupper():
             break
         else:
-            if char == password[len(password)-1]:
+            if i == len(password)-1:
                 print("Password must contain at least one uppercase letter")
                 return False
 
-    for char in password:
-        if char.islower():
+    for  i in range(0,len(password)):
+        if password[i].islower():
             break
         else:
-            if char == password[len(password)-1]:
+            if i == len(password)-1:
                 print("Password must contain at least one lowercase letter")
                 return False
 
-    for char in password:
-        if char.isdigit():
+    for i in range(0,len(password)):
+        if password[i].isdigit():
             break
         else:
-            if char == password[len(password)-1]:
+            if i == len(password)-1:
                 print("Password must contain at least one digit")
                 return False
+        
 
-    for char in password:
-        if char in ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+']:
+    for i in range(0,len(password)):
+        if password[i] in ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+']:
             break
         else:
-            if char == password[len(password)-1]:
+            if i == len(password)-1:
                 print("Password must contain at least one special symbol")
                 return False
-
-    if not patterns_checker(password):
+    if patterns_checker(password) == False:
         return False
+    else:
+        print("Password is valid")
+        return True
+        
 
-    return True
 
 def patterns_checker(password):
     keyboardorder = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/']

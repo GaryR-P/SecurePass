@@ -3,7 +3,7 @@ from rulechecker import check_password
 
 class TestRuleChecker(unittest.TestCase):
     def test_valid_password(self):
-        self.assertTrue(check_password("StrongPass123!"))
+        self.assertTrue(check_password("StrongPass157!"))
 
     def test_too_short(self):
         self.assertFalse(check_password("Short1!"))

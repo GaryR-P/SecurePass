@@ -72,5 +72,4 @@ def patterns_checker(password):
 
     return True
 
-# Run the check
-check_password(input_password)
+
